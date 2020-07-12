@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS Camp metro</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        {% for k, v in handlers.items() %}
+            <div style="width: 33%; float: left;">
+                Task {{ k }}: <br>
+                <table>
+                    <tr>
+                        <th>team</th>
+                        <th>score</th>
+                    </tr>
+                    {% for h in v %}
+                    <tr>
+                        <td>{{ h.team_id }}</td>
+                        <td>{{ h.get_total_score() }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endfor %}
+    </body>
+</html>

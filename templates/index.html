@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS Camp metro</title>
+        <meta charset="utf-8">
+        <script src="{{ url_for('static', filename='data.js') }}"></script>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+    </head>
+    <body>
+        <div id="current"></div>
+        <div id="title">
+            <a href="/image">The map (extremely large)</a> <br> <br>
+            Select Problem:
+        </div>
+        <div id="select">
+            <button onclick="setProblem('1')">第一題</button> <br>
+            <button onclick="setProblem('2')">第二題</button> <br>
+            <button onclick="setProblem('3')">第三題</button> <br>
+        </div>
+        <br>
+        <div id="sidebar">
+        </div>
+    </body>
+</html>
