@@ -1,4 +1,11 @@
-#include <bits/stdc++.h>
+#include <map>
+#include <string>
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+
 using namespace std;
 
 typedef int ll; // you can change to long long (?)
