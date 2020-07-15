@@ -1,0 +1,30 @@
+<!DOCTYPE html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
+
+        <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+        <script src="{{ url_for('static', filename='data.js') }}"></script>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+        <title>Start</title>
+    </head>
+    <body>
+        <div id="current"></div>
+        <div id="title">
+            Select Problem:
+        </div>
+        <div id="select">
+            <button onclick="setProblem('1')">第一題</button> <br>
+            <button onclick="setProblem('2')">第二題</button> <br>
+            <button onclick="setProblem('3')">第三題</button> <br>
+        </div>
+        <br>
+        <div id="sidebar">
+        </div>
+    </body>
+</html>

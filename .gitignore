@@ -1,6 +1,8 @@
 *.out
 __pycache__/*
 templates/scss/*
-templates/*.js
-templates/*.json
-templates/node_modules/*
+*.js
+*.json
+node_modules/*
+
+.vscode/*

@@ -1,24 +1,278 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CS Camp metro</title>
-        <meta charset="utf-8">
-        <script src="{{ url_for('static', filename='data.js') }}"></script>
-        <script src="{{ url_for('static', filename='index.js') }}"></script>
-    </head>
-    <body>
-        <div id="current"></div>
-        <div id="title">
-            <a href="/image">The map (extremely large)</a> <br> <br>
-            Select Problem:
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+
+    <!--
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    -->
+
+    <title>CS Camp Metro</title>
+</head>
+
+<body id="home" data-spy="scroll" data-target="#main-nav">
+
+    <!--Start Here-->
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
+        <div class="container">
+            <a href="#home" class="navbar-brand">
+                <h3 class="d-inline align-middle">CSIE Metro</h3>
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#rules" class="nav-link">Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#downloads" class="nav-link">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#creators" class="nav-link">Meet the Creators</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="select">
-            <button onclick="setProblem('1')">第一題</button> <br>
-            <button onclick="setProblem('2')">第二題</button> <br>
-            <button onclick="setProblem('3')">第三題</button> <br>
+    </nav>
+
+    <!-- SHOWCASE -->
+
+    <section id="showcase" class="py-5">
+        <div class="primary-overlay text-white">
+            <div class="container">
+                <div class="text-center my-5 py-5">
+                    <h1 class="display-2 my-5 py-5">
+                        資訊營趴趴走
+                    </h1>
+                    <p class="lead">To start your adventure of finding the shortest path in the myth of the City of Sex, please press the button below</p>
+                    <a href="/start" class="btn btn-success btn-lg text-white">
+                        <i class="fas fa-arrow-right pr-3"></i>Start Game
+                    </a>
+                </div>
+            </div>
         </div>
-        <br>
-        <div id="sidebar">
+    </section>
+
+    <!-- RULES -->
+
+    <section id="rules" class="my-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="info-header mb-5">
+                        <h1 class="text-primary pb-3">
+                            Rules
+                        </h1>
+                    </div>
+                    <div class="row">
+                <div class="col-lg-6 col-md-12 pb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                Rule 1
+                            </h3>
+                            <hr>
+                            <p class="card-text">Given a starting point A and multiple destination points B, C, ......, find the shortest path of A to B, A to C, ......</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 pb-4">
+                    <div class="card pb-2">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                Rule 2
+                            </h3>
+                            <hr>
+                            <p class="card-text">Your score will be equal to the sum of <span class = "font-weight-bold">Your Path Length - the Actual Shortest Path Length</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 pb-4">
+                    <div class="card pb-2">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                Rule 3
+                            </h3>
+                            <hr>
+                            <p class="card-text">The team with the <span class = "font-weight-bold text-uppercase">smaller</span> score wins the game. Any unsubmitted paths will be counted as a score of 100.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 pb-4">
+                    <div class="card pb-2">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                Rule 4
+                            </h3>
+                            <hr>
+                            <p class="card-text"> Every round lasts <span class = "font-weight-bold"> 2.5 minutes</span> and you have <span class="font-weight-bold">unlimited</span> submission attempts (only the best result will be counted)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+    </section>
+
+    <!-- DOWNLOADS -->
+
+    <section id="downloads" class="my-5 text-center">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <div class="info-header mb-5">
+                        <h1 class="text-primary pb-3">
+                            Downloads
+                        </h1>
+                        <p class="lead">
+                            Different resolutions of the CSIE Metro map are provided below
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-group text-left">
+                <a href="img/csie_metro_600ppi.png" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    csie_metro_600ppi
+                    <span class="badge badge-pill">6.3MB</span>
+                </a>
+                <a href="img/csie_metro_300ppi.png" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    csie_metro_300ppi
+                    <span class="badge badge-pill">2.4MB</span>
+                </a>
+                <a href="img/csie_metro_150ppi.png" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    csie_metro_150ppi
+                    <span class="badge badge-pill">1.1MB</span>
+                </a>
+                <a href="img/csie_metro_72ppi.png" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    csie_metro_72ppi
+                    <span class="badge badge-pill">468KB</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- CREATORS -->
+    <section id="creators" class="my-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="info-header mb-5">
+                        <h1 class="text-primary pb-3">
+                            Meet The Creators
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="img/person1.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+                            <h3>
+                                Chichichi (Chi-Feng Tsai)
+                            </h3>
+                            <h5 class="text-muted">Lead Executive</h5>
+                            <p class = "card-text">
+                            Mainly responsible for the design of the game, setting up the auto judging server , providing helpful feedback, and hosting the game during the event.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <div class="p-4">
+                                    <a href="http://facebook.com">
+                                        <i class="fab fa-2x fa-facebook"></i></a>
+                                </div>
+                                <div class="p-4">
+                                    <a href="http://instagram.com">
+                                        <i class="fab fa-2x fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="img/person2.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+                            <h3>
+                                浩哥 (Yu-Hao Chen)
+                            </h3>
+                            <h5 class="text-muted">Co-creator</h5>
+                            <p>Mainly responsible for creating the metro map, designing the front-end portion of this server, and serving as the assistant during the event.</p>
+                            <div class="d-flex justify-content-center">
+                                <div class="p-4">
+                                    <a href="http://facebook.com">
+                                        <i class="fab fa-2x fa-facebook"></i></a>
+                                </div>
+                                <div class="p-4">
+                                    <a href="http://instagram.com">
+                                        <i class="fab fa-2x fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+
+    <footer id="main-footer" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 ml-auto">
+                    <div class="lead">
+                        Copyright &copy; <span id="year"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="{{ url_for('static', filename='data.js') }}"></script>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script>
+    //get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+    //Init Scrollspy
+    $('body').scrollspy({
+        target: '#main-nav'
+    });
+
+    //Smooth scrolling
+    $('#main-nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            const hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+</script>
 </html>

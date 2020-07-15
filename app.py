@@ -17,6 +17,10 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/start')
+def start():
+    return render_template('start.html')
+
 
 @app.route('/submit')
 def submit():
@@ -47,15 +51,9 @@ def submit():
     return render_template('success.html', team_id=team_id, path=ret_path, score=score)
 
 
-@app.route('/image')
-def image():
-    return render_template('image.html')
-
-
 @app.route('/aaaaadmin')
 def admin():
     return render_template('admin.html', handlers=handlers)
-
 
 
 if __name__ == "__main__":
