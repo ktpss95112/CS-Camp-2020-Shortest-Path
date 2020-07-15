@@ -54,8 +54,21 @@ function getDistance(from, to) {
 function setProblem(pid) {
     problemId = pid;
 
-    document.getElementById('title').innerHTML = 'Your team token:'
-    document.getElementById('select').innerHTML = `<input type="text" name="teamToken" id="teamToken"> <button onclick="setToken()">submit</button>`;
+    document.getElementById('title').innerHTML = 'Your Team token:'
+    document.getElementById('select').innerHTML =
+    `
+    <form class="input-form" action="">
+        <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                </span>
+            </div>
+            <input type="text" name="teamToken" id="teamToken" class="form-control" placeholder="Team Token">
+        </div>
+        <button type="button" onclick="setToken()" class="btn btn-block btn-outline-primary py-3">submit</button>
+    </form>
+    `;
 }
 
 

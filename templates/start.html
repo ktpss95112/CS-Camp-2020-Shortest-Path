@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
 
         <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/start.css') }}" rel="stylesheet">
 
         <script src="{{ url_for('static', filename='data.js') }}"></script>
         <script src="{{ url_for('static', filename='index.js') }}"></script>
@@ -14,17 +14,23 @@
         <title>Start</title>
     </head>
     <body>
-        <div id="current"></div>
-        <div id="title">
-            Select Problem:
-        </div>
-        <div id="select">
-            <button onclick="setProblem('1')">第一題</button> <br>
-            <button onclick="setProblem('2')">第二題</button> <br>
-            <button onclick="setProblem('3')">第三題</button> <br>
-        </div>
-        <br>
-        <div id="sidebar">
+        <div class="container text-center">
+            <div id="current"></div>
+
+            <div class="container">
+				<div class="info-header mb-5">
+					<h3 id="title" class="display-4 py-5">Select Problem</h3>
+				</div>
+				<div id="select" class="py-5">
+                    <button type="button" onclick="setProblem('1')" class="btn btn-block btn-outline-primary py-3">Problem 1</button>
+                    <button type="button" onclick="setProblem('2')" class="btn btn-block btn-outline-primary py-3">Problem 2</button>
+                    <button type="button" onclick="setProblem('3')" class="btn btn-block btn-outline-primary py-3">Problem 3</button>
+				</div>
+			</div>
+            <div id="sidebar">
+
+
+            </div>
         </div>
     </body>
 </html>

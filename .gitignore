@@ -4,5 +4,4 @@ templates/scss/*
 *.js
 *.json
 node_modules/*
-
 .vscode/*

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  margin-top: 100px; }
+
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid; }
+
+.input-form {
+  width: 50%;
+  margin: auto; }
+
+@media (max-width: 768px) {
+  #showcase {
+    min-height: 500px; }
+    #showcase h1 {
+      font-size: 4rem; }
+  .mb-resp {
+    margin-bottom: 1rem; } }
