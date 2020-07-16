@@ -47,7 +47,7 @@ def submit():
     print(f'score: {score}')
     print()
 
-    ret_path = ' -> '.join([ en2name[s] if s in en2name else s for s in path.split(',') ])
+    ret_path = ' ⮕ '.join([ en2name[s] if s in en2name else s for s in path.split(',') ])
     return render_template('success.html', team_id=team_id, path=ret_path, score=score)
 
 

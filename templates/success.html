@@ -1,7 +1,36 @@
-success. <br>
-Team: {{ team_id }} <br>
-Path: {{ path }} <br>
-Score: {{ score }} <br>
+<!DOCTYPE html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
 
-<br>
-<a href="/">Go back</a>
+        <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/start.css') }}" rel="stylesheet">
+
+        <script src="{{ url_for('static', filename='data.js') }}"></script>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+        <title>Start</title>
+    </head>
+    <body>
+    <div class="container" id="success">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <i class="fa fa-5x fa-trophy mb-3"></i>
+                </div>
+                <h3 class = "">
+                    Success
+                </h3>
+                <h5 class="text-muted py-2">Team {{ team_id }}</h5>
+                <h5 class="text-muted">Path</h5>
+                <p class="card-text">{{ path }}</p>
+                <h5 class="text-muted">Score</h5>
+                <p class="card-text">{{ score }}</p>
+                <button class="btn-primary btn-lg btn" href="/">Go Back</button>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

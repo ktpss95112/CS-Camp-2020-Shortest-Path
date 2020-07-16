@@ -5,3 +5,5 @@ templates/scss/*
 *.json
 node_modules/*
 .vscode/*
+static/scss/*
+

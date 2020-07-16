@@ -30,10 +30,25 @@ body {
   border-radius: 25px;
 }
 
+#success .fa{
+  color: #3292a6;
+}
+
+#success {
+  width: 50%;
+  margin: auto;
+}
+
 @media (max-width: 768px) {
   #showcase {
     min-height: 500px; }
     #showcase h1 {
       font-size: 4rem; }
   .mb-resp {
-    margin-bottom: 1rem; } }
+    margin-bottom: 1rem; }
+
+  #success{
+    width:100%;
+  }
+
+}

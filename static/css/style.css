@@ -40,9 +40,21 @@ body {
   color: #3292a6; }
 
 @media (max-width: 768px) {
+  body{
+    margin-top: 90px;
+  }
   #showcase {
     min-height: 500px; }
-    #showcase h1 {
-      font-size: 4rem; }
+  #showcase h1 {
+    font-size: 3rem; }
+  #showcase>div>div>div{
+    padding: 25px 0px !important;
+    margin: 0px !important;
+  }
+  .info-header {
+    width: 100%;
+  }
+
   .mb-resp {
-    margin-bottom: 1rem; } }
+  margin-bottom: 3rem; }
+}
