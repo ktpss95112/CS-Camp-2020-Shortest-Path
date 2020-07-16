@@ -14,23 +14,38 @@
         <title>Start</title>
     </head>
     <body>
-        <div class="container text-center">
-            <div id="current"></div>
 
-            <div class="container">
-				<div class="info-header mb-5">
-					<h3 id="title" class="display-4 py-5">Select Problem</h3>
-				</div>
-				<div id="select" class="py-5">
-                    <button type="button" onclick="setProblem('1')" class="btn btn-block btn-outline-primary py-3">Problem 1</button>
-                    <button type="button" onclick="setProblem('2')" class="btn btn-block btn-outline-primary py-3">Problem 2</button>
-                    <button type="button" onclick="setProblem('3')" class="btn btn-block btn-outline-primary py-3">Problem 3</button>
-				</div>
-			</div>
-            <div id="sidebar">
-
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container text-center">
+                    <div class="container">
+                        <div class="info-header mb-5">
+                            <h3 id="title" class="display-4 py-5">Select Problem</h3>
+                        </div>
+                        <div id="select" class="py-5">
+                            <button type="button" onclick="setProblem('1')" class="btn btn-block btn-outline-primary py-3">Problem 1</button>
+                            <button type="button" onclick="setProblem('2')" class="btn btn-block btn-outline-primary py-3">Problem 2</button>
+                            <button type="button" onclick="setProblem('3')" class="btn btn-block btn-outline-primary py-3">Problem 3</button>
+                        </div>
+                        <div id="bottom_bar">
+                        </div>
+                    </div>
+                    <div id="current"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="">2</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="">4</div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </body>
 </html>

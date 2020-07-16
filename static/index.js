@@ -81,14 +81,14 @@ function renderSelect(from) {
             if (specialPoints.includes(tmp)) {
                 tmp = en2name[tmp];
             }
-            html += `<button onclick="setTravel('${value[1]}')">${tmp} (距離 ${value[2]})</button> <br>`;
+            html += `<button type="button" onclick="setTravel('${value[1]}')" class="btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">Distance ${value[2]}</span></button>`;
         }
         else if (from === value[1]) {
             let tmp = value[0];
             if (specialPoints.includes(tmp)) {
                 tmp = en2name[tmp];
             }
-            html += `<button onclick="setTravel('${value[0]}')">${tmp} (距離 ${value[2]})</button> <br>`;
+            html += `<button type="button" onclick="setTravel('${value[0]}')" class="btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">Distance ${value[2]}</span></button>`;
         }
     });
 
@@ -98,12 +98,12 @@ function renderSelect(from) {
         replacedPayload.push(tmp);
     });
 
-    document.getElementById('current').innerHTML = 'Current path: ' + replacedPayload.join(' -> ') + '<br> Current length: ' + pathlen.toString();
-    document.getElementById('title').innerHTML = 'Go to:';
+    document.getElementById('current').innerHTML = 'Current path: ' + replacedPayload.join(' ⮕ ') + '<br> Current length: ' + pathlen.toString();
+    document.getElementById('title').innerHTML = 'Go to';
     document.getElementById('select').innerHTML = html;
-    document.getElementById('sidebar').innerHTML = '<button onclick="undo()">undo</button> <br>';
+    document.getElementById('bottom_bar').innerHTML = '<button class="btn-primary btn-lg btn" onclick="undo()">Undo</button>';
     if (payload.length !== 1 && destinations[problemId].includes(payload[payload.length - 1])) {
-        document.getElementById('sidebar').innerHTML += '<button onclick="submit()">submit</button>';
+        document.getElementById('bottom_bar').innerHTML += '<button class="btn-success btn-lg btn ml-3" onclick="submit()">Submit</button>';
     }
 }
 
@@ -127,10 +127,12 @@ function setTravel(point) {
 
 
 function undo() {
-    pathlen -= getDistance(payload[payload.length - 1], payload[payload.length - 2]);
-    payload.pop();
+    if(payload.length > 1){
+        pathlen -= getDistance(payload[payload.length - 1], payload[payload.length - 2]);
+        payload.pop();
 
-    renderSelect(payload[payload.length - 1]);
+        renderSelect(payload[payload.length - 1]);
+    }
 }
 
 
