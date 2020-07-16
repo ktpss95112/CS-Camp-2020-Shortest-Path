@@ -14,38 +14,47 @@
         <title>Start</title>
     </head>
     <body>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="container text-center">
-                    <div class="container">
-                        <div class="info-header mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none" id="current_wrap">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center card-box">
+                                <div class="info-header py-4">
+                                    <h2 class="">目前路徑</h2>
+                                </div>
+                                <h3 id="current_path" class="py-4 px-5">
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center card-box">
+                                <div class="info-header py-4">
+                                    <h2 class="">目前長度</h2>
+                                </div>
+                                <h3 id="current_length" class="p-4">
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="select_wrap">
+                    <div class="container text-center">
+                        <div class="info-header mb-3">
                             <h3 id="title" class="display-4 py-5">Select Problem</h3>
                         </div>
                         <div id="select" class="py-5">
-                            <button type="button" onclick="setProblem('1')" class="btn btn-block btn-outline-primary py-3">Problem 1</button>
-                            <button type="button" onclick="setProblem('2')" class="btn btn-block btn-outline-primary py-3">Problem 2</button>
-                            <button type="button" onclick="setProblem('3')" class="btn btn-block btn-outline-primary py-3">Problem 3</button>
+                            <button type="button" onclick="setProblem('1')" class="text-lg btn btn-block btn-outline-primary py-3">Problem 1</button>
+                            <button type="button" onclick="setProblem('2')" class="text-lg btn btn-block btn-outline-primary py-3">Problem 2</button>
+                            <button type="button" onclick="setProblem('3')" class="text-lg btn btn-block btn-outline-primary py-3">Problem 3</button>
                         </div>
                         <div id="bottom_bar">
                         </div>
                     </div>
-                    <div id="current"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="">2</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="">4</div>
-                    </div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>

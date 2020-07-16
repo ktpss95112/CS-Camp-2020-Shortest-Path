@@ -66,7 +66,7 @@ function setProblem(pid) {
             </div>
             <input type="text" name="teamToken" id="teamToken" class="form-control" placeholder="Team Token">
         </div>
-        <button type="button" onclick="setToken()" class="btn btn-block btn-outline-primary py-3">submit</button>
+        <button type="button" onclick="setToken()" class="text-lg btn btn-block btn-outline-primary py-3">submit</button>
     </form>
     `;
 }
@@ -81,14 +81,14 @@ function renderSelect(from) {
             if (specialPoints.includes(tmp)) {
                 tmp = en2name[tmp];
             }
-            html += `<button type="button" onclick="setTravel('${value[1]}')" class="btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">Distance ${value[2]}</span></button>`;
+            html += `<button type="button" onclick="setTravel('${value[1]}')" class="text-lg btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">距離 ${value[2]}</span></button>`;
         }
         else if (from === value[1]) {
             let tmp = value[0];
             if (specialPoints.includes(tmp)) {
                 tmp = en2name[tmp];
             }
-            html += `<button type="button" onclick="setTravel('${value[0]}')" class="btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">Distance ${value[2]}</span></button>`;
+            html += `<button type="button" onclick="setTravel('${value[0]}')" class="text-lg btn btn-block btn-outline-primary py-3 d-flex justify-content-between">${tmp}<span class="badge badge-pill align-items-center">距離 ${value[2]}</span></button>`;
         }
     });
 
@@ -98,7 +98,10 @@ function renderSelect(from) {
         replacedPayload.push(tmp);
     });
 
-    document.getElementById('current').innerHTML = 'Current path: ' + replacedPayload.join(' ⮕ ') + '<br> Current length: ' + pathlen.toString();
+    document.getElementById('current_wrap').classList.remove('d-none');
+    document.getElementById('select_wrap').classList.replace('col-md-12', 'col-md-6');
+    document.getElementById('current_path').innerHTML = replacedPayload.join(' ⮕ ');
+    document.getElementById('current_length').innerHTML = pathlen.toString();
     document.getElementById('title').innerHTML = 'Go to';
     document.getElementById('select').innerHTML = html;
     document.getElementById('bottom_bar').innerHTML = '<button class="btn-primary btn-lg btn" onclick="undo()">Undo</button>';

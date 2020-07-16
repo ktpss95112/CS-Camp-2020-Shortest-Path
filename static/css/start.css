@@ -1,12 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
 body {
   font-family: 'Noto Sans TC', sans-serif;
-}
+  margin-top: 50px;}
 
 .info-header {
   width: 50%;
   margin: auto;
   border-bottom: 1px #ddd solid; }
+
+.card-box{
+  border: 1px #3292a6 solid;
+  border-radius: 25px;
+  margin: 50px 0 25px 100px;
+}
+
+.text-lg{
+  font-size: x-large;
+}
+
+.text-lg>span{
+  font-size: x-large;
+}
 
 #select {
   width: 50%;
