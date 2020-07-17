@@ -4,6 +4,10 @@ app = Flask(__name__)
 from task import Handler
 from data import graph, token2team, en2name
 
+from random import randint
+from os import listdir
+
+server_id = randint(1000000000, 10000000000-1)
 
 handlers = {
     '1': [ Handler(1, team_id) for team_id in range(11) ],
@@ -40,12 +44,14 @@ def submit():
     except ValueError as e:
         return f'<p>{e}</p> <a href="/">Go back</a>'
 
-
-    print(f'team: {token2team[token]}')
+    print(f'server_id: {server_id}')
+    print(f'team: {team_id}')
     print(f'task: {task}')
     print(f'path: {path}')
     print(f'score: {score}')
     print()
+
+    open(f'result/{server_id}-{task}-{team_id}.txt', 'a').write(path + '\n')
 
     ret_path = ' ⮕ '.join([ en2name[s] if s in en2name else s for s in path.split(',') ])
     return render_template('success.html', team_id=team_id, path=ret_path, score=score)
@@ -53,6 +59,18 @@ def submit():
 
 @app.route('/aaaaadmin')
 def admin():
+    global server_id
+    print(f'server_id: {server_id} (admin)')
+    print()
+
+    for f_name in listdir('result'):
+        server_id = f_name.split('-')[0]
+        task = f_name.split('-')[1]
+        team_id = int(f_name.split('-')[2].split('.')[0])
+
+        for line in open(f'result/{f_name}').read().strip().split('\n'):
+            handlers[task][team_id].receive(line)
+
     return render_template('admin.html', handlers=handlers)
 
 

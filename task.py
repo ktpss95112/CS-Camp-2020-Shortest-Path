@@ -8,6 +8,9 @@ class Handler:
         self.paths = {}
         self.scores = { k: 100 for k in best_solution[self.task_id].keys() }
 
+    def __str__(self):
+        return f'team {self.team_id} , task {self.task_id} , score {self.scores}'
+
     def receive(self, path):
         if not re.match(r'^[A-T],([0-9A-T]{1,3},)+[A-T]$', path):
             raise ValueError('Invalid path: bad format')
